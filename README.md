@@ -30,7 +30,7 @@ Esse princípio recomenda separar apresentação de regras de negócio. Portanto
 Aberto/Fechado tem como objetivo a construção de classes flexíveis e extensíveis, capazes de se adaptarem a diversos cenários de uso, sem modificações no seu código fonte.
 
 # L = Liskov Substitution Principle
-?
+Subclasses devem poder ser usadas no lugar da superclasse sem alterar o funcionamento do sistema. Ou seja, heranças devem manter o comportamento esperado, sem quebrar regras da classe pai.
 
 # I = Interface Segregation Principle
 Esse princípio estabelece que uma classe não deve ser forçada a depender de interfaces que não utiliza por completo. As interfaces devem ser coesas e ter apenas o mínimo necessário para seus clientes, evitando dependências desnecessárias.
