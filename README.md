@@ -45,3 +45,31 @@ No passado houve um incentivo ao uso de herança herança tende a introduzir pro
 ## Princípio de Demeter
 É um principio que evita o uso de variáveis globais para usar variáveis locais nos métodos.
 
+
+## Estilos de Arquitetura Usados
+# Características da arquitetura
+São os atributos que uma boa arquitetura deve possuir. Entre os principais:
+
+- São atributos prioritários do sistema (ex.: segurança, desempenho, escalabilidade).
+- Não dá para escolher todas: é preciso priorizar o que é mais relevante para o contexto do software.
+- Segurança é uma característica que não pode ser deixada de lado.
+- Cada característica escolhida impacta diretamente no sistema (ex.: se foco é segurança → não usar bibliotecas sem controle).
+
+
+# Decisões da arquitetura
+São as escolhas feitas para estruturar o sistema, que impactam diretamente no desenvolvimento e na manutenção. Exemplos:
+
+- São as regras e escolhas estruturais que garantem organização e padronização.
+- Exemplo: adotar uma arquitetura em camadas (apresentação, negócio, serviços, persistência, banco de dados).
+- Definem como as camadas se comunicam e se podem ou não ser puladas.
+- Normalmente as camadas devem ser respeitadas, mas algumas exceções podem ser abertas (com cuidado e planejamento).
+- O professor destacou que misturar estilos arquiteturais é válido, desde que exista uma justificativa clara.
+
+
+# Princípios do design (boas práticas)
+
+- São boas práticas que devem ser seguidas sempre que possível.
+- Servem para aumentar desempenho, flexibilidade e qualidade do sistema.
+- Mensageria assíncrona entre serviços para melhorar desempenho e escalabilidade.
+- Uso de event-driven architecture (arquitetura orientada a eventos) como tendência moderna (ex.: AWS Lambda, Alexa, Instagram, Kindle).
+- Esses princípios são como regras de conduta para o código, que tornam a arquitetura sustentável a longo prazo.
