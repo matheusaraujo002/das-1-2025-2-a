@@ -45,3 +45,28 @@ No passado houve um incentivo ao uso de herança herança tende a introduzir pro
 ## Princípio de Demeter
 É um principio que evita o uso de variáveis globais para usar variáveis locais nos métodos.
 
+
+26/08
+Características da arquitetura = requisitos não funcionais
+É impossível um sistema atender todas as características da arquitetura
+A decisão arquitetural...
+Os principios da arquitetura
+
+01/09
+Habilidades de um Arquiteto de Software
+- Tomar Descisões de Arquitetura
+É uma pessoa com mais experiência com o papel de fazer escolhas e orientar a equipe.
+
+- Analisar Continuamente a Arquitetura
+Avalia constantemente 
+
+- Manter-se Atualizado com as últimas tendências
+
+- Assegurar a conformidade com as decisões
+O arquiteto verifica se a equipe de desenvolvimento está seguindo os padrões de arquitetura, documentação, etc...
+
+- ...
+
+- Ter habilidades Interpessoais
+
+- Entender e lidar bem com questões políticas
