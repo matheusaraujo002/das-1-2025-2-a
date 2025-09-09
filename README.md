@@ -107,3 +107,73 @@ Arquitetura é pensar no sistema como um todo: definir padrões, componentes e r
 
 ## Como é a formação do conhecimento de um arquiteto modelo T?
 O arquiteto precisa saber um pouco de muita coisa (amplitude) e ser especialista em algumas áreas (profundidade). É como a letra T: a barra de cima é o conhecimento amplo, e a barra vertical é a especialização. Assim ele consegue tomar boas decisões e ajudar a equipe.
+
+
+## O que é o padrão de Trade-offs?
+
+Na arquitetura de software, Trade-offs são escolhas entre diferentes qualidades (atributos) do sistema, como desempenho, segurança, manutenibilidade, escalabilidade, etc.
+Geralmente, otimizar uma qualidade impacta negativamente outra, exigindo decisões conscientes.
+
+# Padrão de mensageria baseado em tópicos?
+
+É um padrão de comunicação assíncrono e desacoplado, onde:
+
+- Publishers (publicadores) enviam mensagens/eventos.
+- Subscribers (assinantes) recebem essas mensagens/eventos.
+
+Ambos não conhecem diretamente uns aos outros. A comunicação acontece por meio de um broker (intermediário), como Kafka, RabbitMQ, Redis Pub/Sub etc.
+
+# 🔔 Exemplo: Notificações do WhatsApp
+
+Quando alguém te envia uma mensagem:
+
+- O servidor do WhatsApp (publisher) publica o evento "nova mensagem".
+- O seu app (subscriber) está inscrito para receber esse tipo de notificação.
+- O sistema envia a notificação para o seu dispositivo.
+
+Você não precisa que o app e o servidor estejam conectados diretamente, a entrega da mensagem é gerenciada pelo sistema de mensagens do WhatsApp, de forma assíncrona.
+
+## Padrão de mensageria baseado em filas
+
+É um padrão de comunicação assíncrono e desacoplado, onde:
+
+- Um sender (emissor) envia mensagens para uma fila que atua como buffer.
+- Um ou mais receivers (consumidores) recuperam mensagens da fila, normalmente fazendo polling — verificando periodicamente se há mensagens para processar.
+- O sender e os receivers não precisam estar conectados diretamente, e a fila garante a entrega das mensagens mesmo se algum receiver estiver temporariamente indisponível.
+
+## Comparação
+
+# Diferenças e Trade-offs entre Filas e Tópicos
+
+Em sistemas distribuídos, a comunicação assíncrona pode ser feita por meio de filas ou tópicos, cada um com suas vantagens e desafios.
+
+# Modelo baseado em filas
+
+Nesse modelo, um emissor envia mensagens para uma fila, onde múltiplos consumidores podem retirar e processar as mensagens. Esse método permite dividir a carga entre vários consumidores, garantindo controle sobre quem recebe cada mensagem. Porém, a implementação é mais complexa e custosa, exigindo gerenciamento de filas, balanceamento e controle de processamento.
+
+# Modelo baseado em tópicos
+
+No modelo de tópicos, o emissor publica mensagens em um canal comum, e todos os consumidores inscritos recebem essas mensagens ao mesmo tempo. É simples e flexível, facilitando a inclusão de novos consumidores sem modificar o emissor. A desvantagem é que todos recebem a mesma mensagem, o que pode gerar custo elevado se as mensagens forem grandes, além de exigir que todos aceitem o mesmo formato de dados.
+
+# Resumo
+
+Filas oferecem maior controle e confiabilidade, mas são mais complexas. Tópicos são mais simples e escaláveis, mas com menos controle e potencial custo maior para mensagens grandes. A escolha depende das necessidades específicas da aplicação, equilibrando controle, custo e flexibilidade.
+
+
+## Padrão Fan-out em Mensageria
+
+O padrão fan-out combina os modelos de tópicos e filas para garantir que uma mensagem publicada por um único sender seja processada por múltiplos consumidores de forma eficiente e controlada.
+
+# Como funciona:
+
+- O sender publica uma mensagem em um único tópico.
+- Essa mensagem é então replicada para várias filas, no exemplo, 3 filas diferentes.
+- Cada uma dessas filas está ligada a um consumidor específico (3 consumidores no total).
+- Os consumidores processam as mensagens de suas filas de forma independente e isolada.
+
+# Vantagens do fan-out:
+
+- Desacoplamento: O sender publica uma única mensagem sem precisar conhecer os consumidores.
+- Isolamento: Cada consumidor tem sua própria fila, permitindo contratos e processos específicos.
+- Escalabilidade: O sistema pode escalar cada consumidor de forma independente, além de facilitar o balanceamento de carga.
+- Resiliência: Se um consumidor ficar offline, sua fila acumula as mensagens, evitando perda de dados.
