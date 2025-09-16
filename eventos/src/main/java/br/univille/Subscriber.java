@@ -10,7 +10,6 @@ public class Subscriber {
         var servidor = "sbdas12025a.servicebus.windows.net";
         var topicName = "topic-das1-a";
         var subscription = "subscription-matheusaraujo";
-
         String chave = System.getenv("CHAVE");
 
         ServiceBusProcessorClient processorClient = new ServiceBusClientBuilder()
