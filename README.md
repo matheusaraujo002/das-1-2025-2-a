@@ -1,11 +1,23 @@
 ## das-1-2025-2-a
 
+# Princípios de Projeto de Código
+São boas práticas que guiam a escrita de código mais limpo, compreensível e sustentável a longo prazo.
+
+
 # O que é abstração?
 Uma abstração é importante para combater a complexidade de sistemas de software. Uma abstração é uma representação de uma entidade, ela é simples mas nos permite interagir e tirar proveito da entidade abstraída, sem que tenhamos que dominar todos os detalhes envolvidos na sua implementação.
+
+# Ocultamento de Informação
+O ocultamento de informação consiste em expor apenas o necessário para o uso de uma classe ou módulo e esconder detalhes internos de implementação. Isso reduz dependências externas e aumenta a flexibilidade para futuras mudanças sem quebrar o código cliente.
 
 
 # O que é coesão?
 É esperado que uma classe seja escrita com uma única funcionalidade ou serviço, todos os métodos e atributos de uma classe devem estar voltados para a implementação do mesmo serviço. Assim facilitando o entendimento, a manutenção e o teste.
+
+
+# Acoplamento
+Acoplamento é o grau de dependência entre módulos de um sistema. Quanto maior o acoplamento, mais difícil será manter e evoluir o software, pois mudanças em um módulo afetam outros. O ideal é buscar baixo acoplamento, privilegiando interfaces e abstrações para manter os módulos independentes.
+
 
 # Tipos de relacionamentos
 - ⇾ Herança
@@ -74,8 +86,8 @@ São as escolhas feitas para estruturar o sistema, que impactam diretamente no d
 - Uso de event-driven architecture (arquitetura orientada a eventos) como tendência moderna (ex.: AWS Lambda, Alexa, Instagram, Kindle).
 - Esses princípios são como regras de conduta para o código, que tornam a arquitetura sustentável a longo prazo.
 
-26/08
-Características da arquitetura = requisitos não funcionais
+💡 Características da arquitetura = requisitos não funcionais
+
 É impossível um sistema atender todas as características da arquitetura
 A decisão arquitetural...
 Os principios da arquitetura
@@ -94,13 +106,18 @@ Manter-se atualizado com as últimas tendências envolve acompanhar novas tecnol
 - Assegurar a conformidade com as decisões
 O arquiteto verifica se a equipe de desenvolvimento está seguindo os padrões de arquitetura, documentação, etc...
 
-- ...?
-
 - Ter habilidades Interpessoais
 É saber se comunicar, colaborar e resolver conflitos eficazmente com equipes e stakeholders para garantir o alinhamento e o sucesso do projeto.
 
 - Entender e lidar bem com questões políticas
 Isso significa reconhecer interesses, influências e dinâmicas de poder dentro da organização para negociar, mediar conflitos e tomar decisões estratégicas que beneficiem o projeto.
+
+- Domínio do Negócio
+Um arquiteto precisa compreender profundamente o domínio do negócio no qual o sistema será aplicado. Esse conhecimento garante que as decisões técnicas estejam alinhadas às necessidades reais da organização, evitando soluções tecnicamente corretas, mas inúteis para o contexto.
+
+- DevOps
+Um arquiteto moderno deve também dominar práticas de DevOps, integrando desenvolvimento e operações. Isso envolve automação de deploys, integração contínua, entrega contínua (CI/CD), monitoramento e observabilidade. O objetivo é garantir entregas rápidas, seguras e sustentáveis, além de reduzir a distância entre quem desenvolve e quem mantém o sistema em produção.
+
 
 ## Resuma a diferençca entre: Arquitetura e Design
 Arquitetura é pensar no sistema como um todo: definir padrões, componentes e requisitos. Design é detalhar como essas partes vão funcionar no dia a dia, como interfaces e código. Antes, arquitetura e design ficavam separados, mas isso causa problemas. Hoje, arquitetos e desenvolvedores precisam trabalhar juntos o tempo todo para a coisa funcionar bem.
