@@ -194,3 +194,16 @@ O padrão fan-out combina os modelos de tópicos e filas para garantir que uma m
 - Isolamento: Cada consumidor tem sua própria fila, permitindo contratos e processos específicos.
 - Escalabilidade: O sistema pode escalar cada consumidor de forma independente, além de facilitar o balanceamento de carga.
 - Resiliência: Se um consumidor ficar offline, sua fila acumula as mensagens, evitando perda de dados.
+
+
+# 2º Bimestre
+## Circuit Breaker Pattern
+https://learn.microsoft.com/pt-br/azure/architecture/patterns/circuit-breaker?wt.mc_id=AZ-MVP-5003638
+
+Protege sistemas contra falhas em serviços externos, interrompendo chamadas problemáticas para evitar sobrecarga.
+
+Estados:
+- Fechado: Comunicação normal, monitorando falhas.
+- Aberto: Comunicação bloqueada por falhas recentes.
+- Meio Aberto: Testa se o serviço voltou; se sim, fecha o circuito, se não, abre novamente.
+
