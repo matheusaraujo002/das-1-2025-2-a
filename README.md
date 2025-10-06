@@ -1,4 +1,8 @@
-# 📘 Princípios de Projeto de Código
+# 📆 1º Bimestre
+
+---
+
+## 📘 Princípios de Projeto de Código
 > São boas práticas que guiam a escrita de código mais **limpo, compreensível e sustentável** a longo prazo.
 
 ---
@@ -35,14 +39,56 @@ O **acoplamento** é o grau de dependência entre módulos:
 
 ---
 
-## 📚 Tipos de Relacionamentos
-- ⇾ **Herança**  
-- ⇢ **Implementação**  
-- ➞ **Associação**  
+## 📚 Tipos de Relacionamentos em Orientação a Objetos
+
+Os relacionamentos indicam **como as classes se conectam ou dependem umas das outras** dentro de um sistema.  
+Eles ajudam a entender **quem usa quem** e **como as responsabilidades estão distribuídas**.
+
+
+### 🧬 **Herança** ( ─────────▷ Seta vazada com linha contínua)
+A herança representa um relacionamento do tipo **“é um”**.  
+Uma classe filha herda **atributos e métodos** de uma classe pai, podendo reutilizar e até especializar o comportamento.
+
+📘 Exemplo:  
+`Cachorro` herda de `Animal` → significa que **um cachorro é um tipo de animal**.  
+Assim, `Cachorro` tem tudo o que `Animal` tem, além de suas próprias características.
+
+💡 Usada para **reaproveitar código** e **definir hierarquias** entre classes.
+
+
+### ⚙️ **Implementação** ( - - - -▷ Seta vazada com linha pontilhada)
+A implementação ocorre quando uma **classe concreta adota o contrato de uma interface**.  
+Ou seja, a classe se compromete a **implementar todos os métodos** definidos pela interface.
+
+📘 Exemplo:  
+A classe `Cachorro` implementa a interface `SomAnimal`, garantindo que ela tenha o método `emitirSom()` definido pela interface.
+
+💡 Usada para garantir **padronização de comportamento** entre diferentes classes.
+
+
+### 🔗 **Associação** ( ─────────▶ Seta preenchida com linha contínua)
+A associação representa um relacionamento do tipo **“usa”** ou **“possui”**.  
+Indica que uma classe **depende de outra** para executar alguma ação, mas sem criar uma hierarquia entre elas.
+
+📘 Exemplo:  
+`Pessoa` usa um `Carro` → significa que **a pessoa possui ou utiliza um carro**, mas eles são entidades separadas.
+
+💡 Usada para representar **colaboração** entre objetos.
 
 ---
 
-# 🏛️ SOLID
+## 🧠 O que são Design Patterns?
+
+Os **Design Patterns** (Padrões de Projeto) são **soluções típicas para problemas recorrentes** no design de software.  
+Pense neles como **modelos ou “blueprints”** que podem ser adaptados para resolver desafios comuns na estrutura do código.
+
+💡 Eles **não são pedaços prontos de código**, mas **conceitos reutilizáveis** que orientam a forma de resolver um problema específico de maneira eficiente e padronizada.
+
+🔗 [Refactoring Guru](https://refactoring.guru/design-patterns/catalog)
+
+---
+
+## 🏛️ SOLID
 
 - **S** - Single Responsibility Principle  
 - **O** - Open/Closed Principle  
@@ -50,7 +96,6 @@ O **acoplamento** é o grau de dependência entre módulos:
 - **I** - Interface Segregation Principle  
 - **D** - Dependency Inversion Principle  
 
----
 
 ### 🟦 S = Single Responsibility Principle
 Separar **apresentação** de **regras de negócio**.  
@@ -60,25 +105,21 @@ Separar **apresentação** de **regras de negócio**.
 - **V** = View → interface com o usuário  
 - **C** = Controller → intermediário entre Model e View  
 
----
 
 ### 🟩 O = Open/Closed Principle
 Classes devem ser:  
 - **Abertas para extensão**  
 - **Fechadas para modificação**  
 
----
 
 ### 🟨 L = Liskov Substitution Principle
 Subclasses devem poder substituir suas superclasses **sem quebrar o sistema**.  
 
----
 
 ### 🟧 I = Interface Segregation Principle
 Uma classe **não deve depender** de interfaces que não utiliza.  
 Interfaces devem ser **pequenas e coesas**.  
 
----
 
 ### 🟥 D = Dependency Inversion Principle
 Depender de **abstrações**, não de implementações concretas.  
@@ -98,32 +139,29 @@ Prefira **variáveis locais** nos métodos.
 
 ---
 
-# ⚙️ Estilos de Arquitetura Usados
+## ⚙️ Estilos de Arquitetura Usados
 
-## 🌟 Características da Arquitetura
+### 🌟 Características da Arquitetura
 - Definidas como **atributos de qualidade** (segurança, desempenho, escalabilidade).  
 - Não é possível priorizar todos → escolha os mais relevantes.  
 - **Segurança** nunca deve ser deixada de lado.  
 
 💡 Características da arquitetura = **requisitos não funcionais**  
 
----
 
-## 🗂️ Decisões de Arquitetura
+### 🗂️ Decisões de Arquitetura
 - Escolhas estruturais que impactam diretamente o sistema.  
 - Exemplo: Arquitetura em camadas (apresentação, negócio, persistência, etc.).  
 - Normalmente as camadas devem ser respeitadas, mas exceções podem existir com **planejamento**.  
 
----
 
-## 📐 Princípios do Design
+### 📐 Princípios do Design
 - Boas práticas que aumentam desempenho, flexibilidade e qualidade.  
 - **Mensageria assíncrona** entre serviços.  
 - Uso de **event-driven architecture** (ex.: AWS Lambda, Alexa, Instagram).  
 
----
 
-# 👨‍💻 Habilidades de um Arquiteto de Software
+### 👨‍💻 Habilidades de um Arquiteto de Software
 - 🧭 **Tomar decisões arquiteturais**  
 - 🔍 **Analisar continuamente a arquitetura**  
 - 📈 **Atualizar-se com tendências**  
@@ -133,23 +171,20 @@ Prefira **variáveis locais** nos métodos.
 - 💼 **Domínio do negócio**  
 - 🔄 **DevOps (CI/CD, monitoramento, automação)**  
 
----
 
-## 🔎 Arquitetura vs Design
+### 🔎 Arquitetura vs Design
 - **Arquitetura** → visão macro, padrões e requisitos.  
 - **Design** → detalhes de implementação e código.  
 
 Hoje ambos devem ser trabalhados **em conjunto**.  
 
----
 
-## 📊 Modelo T de Conhecimento
+### 📊 Modelo T de Conhecimento
 - Barra horizontal (—) → conhecimento amplo  
 - Barra vertical (|) → especialização profunda  
 
----
 
-## ⚖️ Trade-offs
+### ⚖️ Trade-offs
 São escolhas entre qualidades como:
 - Desempenho  
 - Segurança  
@@ -160,7 +195,7 @@ São escolhas entre qualidades como:
 
 ---
 
-# 📬 Padrões de Mensageria
+## 📬 Padrões de Mensageria
 
 ### 📡 Baseado em Tópicos
 - **Publisher** envia mensagens  
@@ -194,7 +229,11 @@ Vantagens: **desacoplamento, escalabilidade, resiliência**.
 
 ---
 
-# 🔌 Circuit Breaker Pattern
+# 📆 2º Bimestre
+
+---
+
+## 🔌 Circuit Breaker Pattern
 Protege sistemas contra falhas em serviços externos:  
 - **Fechado** → comunicação normal  
 - **Aberto** → bloqueia após falhas  
