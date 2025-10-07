@@ -262,3 +262,24 @@ Exemplos importantes incluem:
 Essas características estruturais são essenciais para garantir que o software seja sustentável, adaptável e fácil de evoluir.
 
 ---
+
+## ⚖️ Padrão CQRS (Command Query Responsibility Segregation)
+
+O CQRS é um padrão que separa as operações de leitura e escrita usando bancos de dados diferentes para melhorar o desempenho, evitar travamentos e facilitar a escalabilidade.
+
+
+### ⚙️ Como funciona na prática: 
+Você tem um banco principal, onde só são feitas as gravações, ou comandos. Para as leituras, você usa bancos réplicas, que são cópias do banco principal, mas só aceitam consultas (leitura), não gravações.
+
+### 🚀 Benefícios principais: 
+- 🔒 Sem travamentos: Como as leituras e gravações acontecem em bancos separados, não tem aquele conflito clássico de “alguém quer ler enquanto outro escreve”.
+- ⚡ Mais desempenho: A aplicação fica mais rápida porque as consultas pesadas vão para as réplicas, liberando o banco principal para se concentrar nas escritas.
+- 🛡️ Alta disponibilidade: Se o banco principal falhar, as réplicas podem garantir que o sistema continue funcionando, pois estão em locais diferentes e atualizam os dados automaticamente.
+
+### 📌 Detalhes importantes:
+
+> A sincronização entre o banco principal e as réplicas é assíncrona, ou seja, as réplicas ficam com um pequeno atraso (milissegundos), mas na maioria dos casos isso não atrapalha o sistema.
+> Essa arquitetura é usada por sistemas grandes e críticos, como bancos, e-commerces e serviços que precisam suportar muitos usuários e manter alta performance.
+> Essa separação ajuda a manter o sistema rápido, escalável, estável e mais fácil de gerenciar.
+
+---
