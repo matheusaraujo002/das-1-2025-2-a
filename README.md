@@ -127,7 +127,7 @@ Depender de **abstrações**, não de implementações concretas.
 
 ---
 
-## 🏗️ Prefira Composição a Herança
+## 🔄 Prefira Composição a Herança
 Herança pode dificultar manutenção e evolução.  
 ✔️ Sempre que possível, prefira **composição**.  
 
@@ -240,5 +240,25 @@ Protege sistemas contra falhas em serviços externos:
 - **Meio Aberto** → testa se o serviço voltou  
 
 🔗 [Documentação Microsoft](https://learn.microsoft.com/pt-br/azure/architecture/patterns/circuit-breaker?wt.mc_id=AZ-MVP-5003638)  
+
+---
+
+## 🏗️ Características Estruturais da Arquitetura
+
+São aspectos que influenciam diretamente a estrutura do código e o design interno do sistema. O arquiteto deve garantir qualidade na organização do software, promovendo modularidade, baixo acoplamento e legibilidade do código.
+
+Exemplos importantes incluem:
+
+- **Configuração:** facilidade para os usuários finais alterarem configurações do software.
+- **Extensão:** capacidade de adicionar novas funcionalidades.
+- **Instabilidade:** facilidade de instalação em diferentes plataformas.
+- **Reutilização:** aproveitamento de componentes comuns em múltiplos produtos.
+- **Localização:** suporte a múltiplos idiomas e formatos regionais.
+- **Manutenção:** facilidade para aplicar alterações e melhorias.
+- **Portabilidade:** capacidade de rodar em diferentes ambientes e plataformas.
+- **Suporte:** nível de suporte técnico e facilidades para depuração.
+- **Atualização:** facilidade de atualizar o sistema sem interrupções.
+
+Essas características estruturais são essenciais para garantir que o software seja sustentável, adaptável e fácil de evoluir.
 
 ---
