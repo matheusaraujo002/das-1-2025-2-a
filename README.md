@@ -283,3 +283,33 @@ Você tem um banco principal, onde só são feitas as gravações, ou comandos. 
 > Essa separação ajuda a manter o sistema rápido, escalável, estável e mais fácil de gerenciar.
 
 ---
+
+## Retry Pattern
+
+### 🔁 O que é o Retry Pattern
+O padrão Retry é uma técnica usada para lidar com falhas temporárias ao acessar serviços ou recursos remotos. Em vez de falhar imediatamente, a aplicação tenta repetir a operação algumas vezes, seguindo regras definidas para número de tentativas e intervalos entre elas.
+
+### ⚙️ Decisões após uma falha
+A cada falha, a política de retry pode seguir três caminhos:
+
+- ❌ Cancelar (Cancel): a operação é encerrada se o erro for considerado definitivo ou não recuperável.
+- 🔄 Tentar novamente imediatamente (Retry immediately): usada apenas em casos específicos onde a falha é considerada pontual e de rápida resolução.
+- ⏱️ Tentar novamente após um atraso (Retry after delay): é a abordagem mais comum, permitindo que o sistema se recupere antes de uma nova tentativa.
+
+### 📈 Delay exponencial
+O delay exponencial é uma estratégia onde o tempo de espera entre tentativas aumenta progressivamente (por exemplo: 1s, 2s, 4s, 8s...). Isso reduz a pressão sobre o serviço remoto, evita tentativas excessivas em pouco tempo e melhora a estabilidade do sistema. Muitas vezes, um fator aleatório (“jitter”) também é adicionado ao tempo de espera para evitar que múltiplas instâncias façam retentativas ao mesmo tempo.
+
+🔗 [Documentação Microsoft](https://learn.microsoft.com/en-us/azure/architecture/patterns/retry)
+
+---
+
+## 🖥️ Arquitetura Cliente/Servidor Centrada em Banco de Dados
+No modelo tradicional de cliente/servidor database-centric, os aplicativos eram instalados nos computadores dos usuários (clientes) e se conectavam diretamente a um banco de dados central via rede. Toda a lógica de negócio e de apresentação geralmente ficava no cliente, enquanto o servidor oferecia apenas acesso aos dados. Esse modelo criava forte dependência entre cliente e banco, dificultando escalabilidade, manutenção e atualização.
+
+## 🌐 Internet 1.0 – Cliente/Servidor com Web Server
+Com a chegada da Internet 1.0, surgiu a arquitetura web baseada em servidores HTTP (web servers). O cliente passou a ser um navegador (browser), que fazia requisições a servidores web. As páginas eram estáticas ou com pouca interatividade, geradas pelo servidor e renderizadas no cliente. A lógica de negócio passou a residir principalmente no servidor. Isso trouxe maior centralização e facilitou a distribuição de conteúdo, eliminando a necessidade de instalar softwares em cada máquina.
+
+## 🚀 Internet 2.0 – Web como Plataforma (Aplicações Dinâmicas)
+Na era da Internet 2.0, os navegadores se tornaram clientes ricos, rodando JavaScript e interagindo com servidores via APIs (geralmente REST ou GraphQL). A lógica de apresentação e parte da lógica de negócio passaram a ser executadas no cliente. O servidor agora expõe dados e funcionalidades, muitas vezes desacoplado da camada de visualização. Essa arquitetura permite experiências mais interativas (como SPAs) e o uso de múltiplos clientes (web, mobile, etc.) acessando os mesmos serviços via rede.
+
+---
