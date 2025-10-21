@@ -313,3 +313,40 @@ Com a chegada da Internet 1.0, surgiu a arquitetura web baseada em servidores HT
 Na era da Internet 2.0, os navegadores se tornaram clientes ricos, rodando JavaScript e interagindo com servidores via APIs (geralmente REST ou GraphQL). A lógica de apresentação e parte da lógica de negócio passaram a ser executadas no cliente. O servidor agora expõe dados e funcionalidades, muitas vezes desacoplado da camada de visualização. Essa arquitetura permite experiências mais interativas (como SPAs) e o uso de múltiplos clientes (web, mobile, etc.) acessando os mesmos serviços via rede.
 
 ---
+
+## 🧱 Estilo de Arquitetura em Camadas
+A arquitetura em camadas (ou n-tier) é um dos estilos mais utilizados por sua simplicidade e organização.
+Ela divide o sistema em partes independentes chamadas camadas, onde cada uma tem uma responsabilidade específica.
+
+### 🧩 Topologia
+As camadas são organizadas em níveis horizontais, geralmente:
+
+- Apresentação → interface com o usuário
+- Negócio → regras e lógicas da aplicação
+- Persistência → acesso e manipulação dos dados
+- Banco de Dados → armazenamento das informações
+
+Cada camada se comunica apenas com a camada logo abaixo, mantendo o sistema mais modular e fácil de entender.
+
+
+### 🧱 Camadas Abertas e Fechadas
+- Camadas Fechadas: o fluxo deve seguir de uma camada para outra, sem “pular etapas”.
+- Camadas Abertas: permitem acesso direto entre camadas, aumentando a flexibilidade, mas também o acoplamento.
+
+
+### ⚖️ Vantagens
+- ✔️ Simples de entender e aplicar
+- 💰 Baixo custo de desenvolvimento
+- 🧠 Facilita a manutenção e a separação de responsabilidades
+
+
+### ⚠️ Desvantagens
+- ❌ Dificuldade de escalar e testar sistemas grandes
+- 🐢 Menor agilidade em mudanças
+- 🔁 Pode gerar acoplamento se mal estruturada
+
+
+### 🎯 Quando Usar
+Ideal para aplicações pequenas ou médias, ou como ponto de partida quando ainda não há uma definição clara de arquitetura.
+
+---
