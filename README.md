@@ -350,3 +350,64 @@ Cada camada se comunica apenas com a camada logo abaixo, mantendo o sistema mais
 Ideal para aplicações pequenas ou médias, ou como ponto de partida quando ainda não há uma definição clara de arquitetura.
 
 ---
+
+## ⚙️ Estilo de Arquitetura Microkernel
+A arquitetura Microkernel (ou plug-in) é usada em sistemas que precisam ser flexíveis, personalizáveis e fáceis de estender.
+Ela separa o sistema em duas partes principais:
+- Sistema Central (Kernel) - contém as funções básicas para o sistema funcionar.
+- Plug-ins - módulos independentes que adicionam ou modificam funcionalidades.
+
+É comum em softwares de produto, como IDEs (Eclipse, IntelliJ), navegadores (Chrome, Firefox) e ferramentas como Jenkins ou Jira.
+
+
+### 🧩 Topologia
+O sistema central é responsável pelas operações principais, enquanto os plug-ins estendem sua funcionalidade.
+Esses plug-ins podem ser adicionados, removidos ou atualizados sem alterar o núcleo, o que facilita manutenção e personalização.
+
+Exemplo: no Eclipse, o editor de texto básico é o sistema central — tudo o que o torna poderoso (Java, Git, Python, etc.) vem dos plug-ins.
+
+
+### 🔌 Sistema Central e Plug-ins
+- Sistema Central: fornece a base mínima para o funcionamento do software.
+- Plug-ins: módulos autônomos e isolados que contêm lógicas específicas (ex: novas regras, recursos extras).
+- Os plug-ins não dependem uns dos outros e se comunicam diretamente com o sistema central.
+
+Eles podem ser:
+- 🧱 Estáticos (em compilação): exigem reinstalar o sistema para atualizar.
+- ⚡ Dinâmicos (em tempo de execução): podem ser adicionados ou removidos sem parar o sistema.
+
+
+### 📡 Comunicação e Registro
+O sistema central precisa saber quais plug-ins estão disponíveis, o que é feito por um registro.
+Esse registro contém informações como nome, tipo, contrato de dados e forma de acesso.
+
+A comunicação pode ocorrer de várias formas:
+- 📞 Chamadas diretas (ponto a ponto)
+- 🌐 REST ou mensageria (quando os plug-ins rodam como serviços separados)
+
+
+### 🧾 Contratos
+Os plug-ins seguem contratos padronizados, que definem como o sistema central se comunica com eles — o que enviam, recebem e como devem se comportar.
+Esses contratos podem ser feitos em interfaces Java, JSON ou XML, garantindo que novos plug-ins se integrem facilmente.
+
+
+### 💼 Casos de Uso
+A arquitetura Microkernel é ideal para sistemas que:
+- Precisam de customização por cliente ou região (ex: softwares fiscais, de seguros, de impostos).
+- Têm regras de negócio variáveis, que mudam com frequência.
+- São baseados em produtos e exigem extensões ou add-ons (como IDEs e navegadores).
+
+
+### ⚖️ Vantagens
+✔️ Extensível e fácil de personalizar
+🧩 Alta modularidade e testabilidade
+🔄 Permite adicionar/remover recursos sem afetar o restante do sistema
+💡 Ideal para produtos com muitas variações ou plugins de terceiros
+
+### ⚠️ Desvantagens
+
+❌ Menor escalabilidade e tolerância a falhas (geralmente monolítico)
+🔁 Requer boa gestão dos plug-ins e seus contratos
+⚙️ Pode ficar complexo com muitos módulos ou integrações remotas
+
+---
