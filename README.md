@@ -411,3 +411,69 @@ A arquitetura Microkernel é ideal para sistemas que:
 ⚙️ Pode ficar complexo com muitos módulos ou integrações remotas
 
 ---
+
+## 🧩 Estilo de Arquitetura Microsserviços
+A arquitetura de Microsserviços divide o sistema em serviços pequenos, independentes e especializados, onde cada serviço é responsável por um único domínio ou funcionalidade do sistema.
+Cada microsserviço funciona como uma miniaplicação completa, com sua própria lógica, dados e regras.
+
+É comum em aplicações modernas de grande escala, como Netflix, Amazon, Uber e Spotify.
+
+
+### 🗺️ Topologia
+Cada serviço roda isolado, geralmente em contêineres ou processos separados.
+Eles se comunicam entre si por APIs, mensageria ou eventos, formando um ecossistema distribuído.
+
+Como cada serviço é independente, equipes podem desenvolver e atualizar partes do sistema sem interferir nas outras.
+
+Exemplo: em um e-commerce, "Pedidos", "Pagamentos" e "Produtos" podem ser serviços separados.
+
+
+### 🧱 Serviços Independentes
+- Cada serviço tem sua própria lógica de negócio.
+- Cada serviço possui seu próprio banco de dados ou armazenamento de dados.
+- Não existe compartilhamento direto de tabelas entre serviços.
+- Atualizar um serviço não afeta os outros.
+
+Essa autonomia reduz acoplamento e permite evolução rápida.
+
+
+### 📡 Comunicação entre Serviços
+Os microsserviços podem se comunicar de diferentes formas:
+- 📞 REST/gRPC (síncrono)
+- 📦 Mensageria como Kafka ou RabbitMQ (assíncrono)
+- 🔄 Eventos para integração desacoplada
+
+Serviços muito dependentes entre si podem gerar acoplamento, então é importante definir bem os limites entre eles.
+
+
+### 🧾 Contratos
+A comunicação entre serviços segue contratos claros, especificando:
+- Formato das mensagens
+- Regras de envio e resposta
+- Erros esperados
+- Políticas de versionamento
+
+Esses contratos podem ser definidos em JSON, OpenAPI, Protobuf etc.
+
+
+### 💼 Casos de Uso
+- A arquitetura Microsserviços é ideal para sistemas que:
+- Precisam escalar partes diferentes independentemente
+- São grandes e complexos, com muitos times atuando
+- Exigem atualizações rápidas e frequentes
+- Precisam integrar tecnologias distintas em áreas diferentes
+
+### ⚖️ Vantagens
+✔️ Altamente escalável
+⚡ Atualizações independentes e rápidas
+🧩 Modularidade real baseada em domínios
+🚀 Ideal para grandes aplicações distribuídas
+
+
+### ⚠️ Desvantagens
+❌ Aumenta a complexidade operacional
+🔍 Difícil rastrear fluxos entre muitos serviços
+🔧 Requer DevOps, monitoramento e infraestrutura mais robusta
+🔁 Comunicação em rede é mais lenta que chamadas internas
+
+---
