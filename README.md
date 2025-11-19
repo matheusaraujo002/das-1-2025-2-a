@@ -35,13 +35,19 @@
 	- [🏗️ Características Estruturais da Arquitetura](#%EF%B8%8F-características-estruturais-da-arquitetura)
 	- [⚖️ Padrão CQRS (Command Query Responsibility Segregation)](#%EF%B8%8F-padrão-cqrs-command-query-responsibility-segregation)
 	- [🔁 Retry Pattern](#retry-pattern)
+   		- [⚙️ Decisões após uma falha](#%EF%B8%8F-decisões-após-uma-falha)
 		- [📈 Delay exponencial](#-delay-exponencial)
 	- [🖥️ Arquitetura Cliente/Servidor Centrada em Banco de Dados](#%EF%B8%8F-arquitetura-clienteservidor-centrada-em-banco-de-dados)
 		- [🌐 Internet 1.0 – Cliente/Servidor com Web Server](#-internet-10--clienteservidor-com-web-server)
 		- [🚀 Internet 2.0 – Web como Plataforma (Aplicações Dinâmicas)](#-internet-20--web-como-plataforma-aplicações-dinâmicas)
 	- [🧱 Estilo de Arquitetura em Camadas](#-estilo-de-arquitetura-em-camadas)
+   		- [🧱 Camadas Abertas e Fechadas](#-camadas-abertas-e-fechadas)
 	- [⚙️ Estilo de Arquitetura Microkernel](#%EF%B8%8F-estilo-de-arquitetura-microkernel)
+   		- [🔌 Sistema Central e Plug-ins](#-sistema-central-e-plug-ins)
+		- [📡 Comunicação e Registro](#-comunicação-e-registro)
 	- [🧩 Estilo de Arquitetura Microsserviços](#-estilo-de-arquitetura-microsserviços)
+		- [🧱 Serviços Independentes](#-serviços-independentes)
+		- [📡 Comunicação entre Serviços](#-comunicação-entre-serviços)
 
 ---
 
