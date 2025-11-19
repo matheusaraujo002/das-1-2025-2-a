@@ -7,7 +7,7 @@
 	- [🔗 Acoplamento](#-acoplamento)
 	- [📚 Tipos de Relacionamentos em Orientação a Objetos](#-tipos-de-relacionamentos-em-orientação-a-objetos)
 		- [🧬 Herança (─────▷)](#-herança---seta-vazada-com-linha-contínua)
-		- [⚙️ Implementação (- - -▷)](#%EF%B8%8F-implementação----------seta-vazada-com-linha-pontilhada)
+		- [⚙️ Implementação (- - - -▷)](#%EF%B8%8F-implementação----------seta-vazada-com-linha-pontilhada)
 		- [🔗 Associação (─────▶)](#-associação---seta-preenchida-com-linha-contínua)
 	- [🧠 O que são Design Patterns?](#-o-que-são-design-patterns)
 	- [🏛️ SOLID](#%EF%B8%8F-solid)
