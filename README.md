@@ -1,3 +1,48 @@
+## 📖 Índice
+- [📆 1º Bimestre](#-1º-bimestre)
+  - [✨ O que é Abstração?](#-o-que-é-abstração)
+	- [🔒 Ocultamento de Informação](#-ocultamento-de-informação)
+	- [🧩 O que é Coesão?](#-o-que-é-coesão)
+	- [🔗 Acoplamento](#-acoplamento)
+	- [📚 Tipos de Relacionamentos em Orientação a Objetos](#-tipos-de-relacionamentos-em-orientação-a-objetos)
+		- [🧬 Herança (─────▷)](#-herança---seta-vazada-com-linha-contínua)
+		- [⚙️ Implementação (- - -▷)](#%EF%B8%8F-implementação----------seta-vazada-com-linha-pontilhada)
+		- [🔗 Associação (─────▶)](#-associação---seta-preenchida-com-linha-contínua)
+	- [🧠 O que são Design Patterns?](#-o-que-são-design-patterns)
+	- [🏛️ SOLID](#%EF%B8%8F-solid)
+		- [🟦 S = Single Responsibility Principle](#-s--single-responsibility-principle)
+		- [🟩 O = Open/Closed Principle](#-o--openclosed-principle)
+		- [🟨 L = Liskov Substitution Principle](#-l--liskov-substitution-principle)
+		- [🟧 I = Interface Segregation Principle](#-i--interface-segregation-principle)
+		- [🟥 D = Dependency Inversion Principle](#-d--dependency-inversion-principle)
+	- [🔄 Prefira Composição a Herança](#-prefira-composição-a-herança)
+	- [📏 Princípio de Demeter](#-princípio-de-demeter)
+	- [⚙️ Estilos de Arquitetura Usados](#%EF%B8%8F-estilos-de-arquitetura-usados)
+		- [🌟 Características da Arquitetura](#-características-da-arquitetura)
+		- [🗂️ Decisões de Arquitetura](#%EF%B8%8F-decisões-de-arquitetura)
+		- [📐 Princípios do Design](#-princípios-do-design)
+		- [👨‍💻 Habilidades de um Arquiteto de Software](#%E2%80%8D-habilidades-de-um-arquiteto-de-software)
+		- [🔎 Arquitetura vs Design](#-arquitetura-vs-design)
+		- [📊 Modelo T de Conhecimento](#-modelo-t-de-conhecimento)
+		- [⚖️ Trade-offs](#%EF%B8%8F-trade-offs)
+	- [📬 Padrões de Mensageria](#-padrões-de-mensageria)
+		- [📡 Baseado em Tópicos](#-baseado-em-tópicos)
+		- [📦 Baseado em Filas](#-baseado-em-filas)
+		- [🌐 Fan-out Pattern](#-fan-out-pattern)
+- [📆 2º Bimestre](#-2º-bimestre)
+	- [🔌 Circuit Breaker Pattern](#-circuit-breaker-pattern)
+	- [🏗️ Características Estruturais da Arquitetura](#%EF%B8%8F-características-estruturais-da-arquitetura)
+	- [⚖️ Padrão CQRS (Command Query Responsibility Segregation)](#%EF%B8%8F-padrão-cqrs-command-query-responsibility-segregation)
+	- [🔁 Retry Pattern](#retry-pattern)
+		- [📈 Delay exponencial](#-delay-exponencial)
+	- [🖥️ Arquitetura Cliente/Servidor Centrada em Banco de Dados](#%EF%B8%8F-arquitetura-clienteservidor-centrada-em-banco-de-dados)
+		- [🌐 Internet 1.0 – Cliente/Servidor com Web Server](#-internet-10--clienteservidor-com-web-server)
+		- [🚀 Internet 2.0 – Web como Plataforma (Aplicações Dinâmicas)](#-internet-20--web-como-plataforma-aplicações-dinâmicas)
+	- [🧱 Estilo de Arquitetura em Camadas](#-estilo-de-arquitetura-em-camadas)
+	- [⚙️ Estilo de Arquitetura Microkernel](#%EF%B8%8F-estilo-de-arquitetura-microkernel)
+	- [🧩 Estilo de Arquitetura Microsserviços](#-estilo-de-arquitetura-microsserviços)
+
+
 # 📆 1º Bimestre
 
 ---
@@ -204,20 +249,14 @@ São escolhas entre qualidades como:
 
 📱 Exemplo: Notificações do WhatsApp  
 
----
-
 ### 📦 Baseado em Filas
 - **Sender** envia para uma fila  
 - **Receivers** consomem da fila  
 - Garante entrega mesmo se receiver estiver offline  
 
----
-
 ### ⚖️ Comparação
 - **Filas** → maior controle, mais complexidade  
 - **Tópicos** → mais simples, mas com menos controle  
-
----
 
 ### 🌐 Fan-out Pattern
 Combina filas + tópicos:
@@ -284,9 +323,7 @@ Você tem um banco principal, onde só são feitas as gravações, ou comandos. 
 
 ---
 
-## Retry Pattern
-
-### 🔁 O que é o Retry Pattern
+## 🔁 Retry Pattern
 O padrão Retry é uma técnica usada para lidar com falhas temporárias ao acessar serviços ou recursos remotos. Em vez de falhar imediatamente, a aplicação tenta repetir a operação algumas vezes, seguindo regras definidas para número de tentativas e intervalos entre elas.
 
 ### ⚙️ Decisões após uma falha
@@ -477,3 +514,4 @@ Esses contratos podem ser definidos em JSON, OpenAPI, Protobuf etc.
 🔁 Comunicação em rede é mais lenta que chamadas internas
 
 ---
+[🔝 Voltar ao início](#)
