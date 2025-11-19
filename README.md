@@ -1,6 +1,7 @@
 ## 📖 Índice
+
 - [📆 1º Bimestre](#-1º-bimestre)
-  - [✨ O que é Abstração?](#-o-que-é-abstração)
+  	- [✨ O que é Abstração?](#-o-que-é-abstração)
 	- [🔒 Ocultamento de Informação](#-ocultamento-de-informação)
 	- [🧩 O que é Coesão?](#-o-que-é-coesão)
 	- [🔗 Acoplamento](#-acoplamento)
@@ -42,6 +43,7 @@
 	- [⚙️ Estilo de Arquitetura Microkernel](#%EF%B8%8F-estilo-de-arquitetura-microkernel)
 	- [🧩 Estilo de Arquitetura Microsserviços](#-estilo-de-arquitetura-microsserviços)
 
+---
 
 # 📆 1º Bimestre
 
@@ -514,4 +516,4 @@ Esses contratos podem ser definidos em JSON, OpenAPI, Protobuf etc.
 🔁 Comunicação em rede é mais lenta que chamadas internas
 
 ---
-[🔝 Voltar ao início](#)
+[🔝 Voltar ao início](#-índice)
